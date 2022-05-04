@@ -14,11 +14,11 @@ app.use((req, res, next) => {
 });
 // middlewares
 app.use(express.json());
-app.use("/.netlify/functions/registro", funkoRoute);
+app.use("/.netlify/functions/api", funkoRoute);
 
 
 // routes
-app.get("/.netlify/functions/registro/", (req, res) => {
+app.get("/.netlify/functions/api/", (req, res) => {
   res.send("Suck APIS");s
 });
 
