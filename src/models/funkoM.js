@@ -5,7 +5,7 @@ const funkoSchema = Schema({
     type: String,
     required: true,
   },
-  price: {
+  priceTotal: {
     type: Number,
     requiered: true,
   },
@@ -13,7 +13,7 @@ const funkoSchema = Schema({
     type: String,
     required: true,
   },
-  stock: {
+  cantidadComprado: {
     type: Number,
     required: true,
   },
@@ -25,7 +25,7 @@ const funkoSchema = Schema({
     type: String,
     required: false,
   },
-  des: {
+  nombreComprador: {
     type: String,
     required: true,
   }
