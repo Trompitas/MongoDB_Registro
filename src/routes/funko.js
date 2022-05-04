@@ -3,6 +3,16 @@ const funkoschema = require("../models/funkoM");
 
 const router = express.Router();
 
+// create funko
+router.post("/funkos", (req, res) => {
+  const funko = funkoschema(req.body);
+
+  funko
+    .save()
+    .then((data) => res.json(data))
+    .catch((error) => res.json({ message: error }));
+});
+
 // get all funkos
 router.get("/funkos", (req, res) => {
   funkoschema
