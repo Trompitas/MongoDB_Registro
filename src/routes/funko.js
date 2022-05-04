@@ -3,16 +3,6 @@ const funkoschema = require("../models/funkoM");
 
 const router = express.Router();
 
-// create funko
-router.post("/funkos", (req, res) => {
-  const funko = funkoschema(req.body);
-
-  funko
-    .save()
-    .then((data) => res.json(data))
-    .catch((error) => res.json({ message: error }));
-});
-
 // get all funkos
 router.get("/funkos", (req, res) => {
   funkoschema
@@ -35,16 +25,6 @@ router.delete("/funkos/:id", (req, res) => {
   const { id } = req.params;
   funkoschema
     .remove({ _id: id })
-    .then((data) => res.json(data))
-    .catch((error) => res.json({ message: error }));
-});
-
-// update a user
-router.put("/funkos/:id", (req, res) => {
-  const { id } = req.params;
-  const { name, price, material, stock, coleccion, funkoImage, des } = req.body;
-  funkoschema
-    .updateOne({ _id: id }, { $set: { name, price, material, stock, coleccion, funkoImage, des } })
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error }));
 });
