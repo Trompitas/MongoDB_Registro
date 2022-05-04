@@ -4,7 +4,7 @@ const funkoschema = require("../models/funkoM");
 const router = express.Router();
 
 // create funko
-router.post("/funkos", (req, res) => {
+router.post("/registros", (req, res) => {
   const funko = funkoschema(req.body);
 
   funko
@@ -14,7 +14,7 @@ router.post("/funkos", (req, res) => {
 });
 
 // get all funkos
-router.get("/funkos", (req, res) => {
+router.get("/registros", (req, res) => {
   funkoschema
     .find()
     .then((data) => res.json(data))
@@ -22,7 +22,7 @@ router.get("/funkos", (req, res) => {
 });
 
 // get a funko
-router.get("/funkos/:id", (req, res) => {
+router.get("/registros/:id", (req, res) => {
   const { id } = req.params;
   funkoschema
     .findById(id)
@@ -31,7 +31,7 @@ router.get("/funkos/:id", (req, res) => {
 });
 
 // delete a funko
-router.delete("/funkos/:id", (req, res) => {
+router.delete("/registros/:id", (req, res) => {
   const { id } = req.params;
   funkoschema
     .remove({ _id: id })
